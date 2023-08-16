@@ -116,8 +116,8 @@ For fixes, use \`diff\` code blocks, marking changes with \`+\` or \`-\`. The li
   given context and refrain from making broad comments about potential impacts on 
   the system or question intentions behind the changes.
 
-If there are no issues found on a line range, you MUST respond with the 
-text \`LGTM!\` for that line range in the review section. 
+If your review comment doesn't suggest any changes,
+you MUST respond with the text 'LGTM!' for that line range in the review section.
 
 ## Example
 
