@@ -7,7 +7,7 @@ import {octokit} from './octokit'
 const context = github_context
 const repo = context.repo
 
-export const COMMENT_GREETING = `<img src="https://avatars.githubusercontent.com/in/347564?s=41" alt="Image description" width="20" height="20">   CodeRabbit`
+export const COMMENT_GREETING = `CodeRabbit`
 
 export const COMMENT_TAG =
   '<!-- This is an auto-generated comment by OSS CodeRabbit -->'
@@ -66,9 +66,7 @@ export class Commenter {
       tag = COMMENT_TAG
     }
 
-    const body = `${COMMENT_GREETING}
-
-${message}
+    const body = `${message}
 
 ${tag}`
 
@@ -183,9 +181,7 @@ ${tag}`
     endLine: number,
     message: string
   ) {
-    message = `${COMMENT_GREETING}
-
-${message}
+    message = `${message}
 
 ${COMMENT_TAG}`
     this.reviewCommentsBuffer.push({
@@ -232,9 +228,7 @@ ${COMMENT_TAG}`
   }
 
   async submitReview(pullNumber: number, commitId: string, statusMsg: string) {
-    const body = `${COMMENT_GREETING}
-
-${statusMsg}
+    const body = `${statusMsg}
 `
 
     if (this.reviewCommentsBuffer.length === 0) {
@@ -367,9 +361,7 @@ ${statusMsg}
     topLevelComment: any,
     message: string
   ) {
-    const reply = `${COMMENT_GREETING}
-
-${message}
+    const reply = `${message}
 
 ${COMMENT_REPLY_TAG}
 `
