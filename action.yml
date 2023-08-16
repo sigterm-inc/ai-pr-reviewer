@@ -8,7 +8,7 @@ inputs:
   debug:
     required: false
     description: 'Enable debug mode'
-    default: 'false'
+    default: 'true'
   max_files:
     required: false
     description:
@@ -152,7 +152,7 @@ inputs:
     required: false
     description:
       'Model to use for simple tasks like summarizing diff on a file.'
-    default: 'gpt-3.5-turbo'
+    default: 'gpt-3.5-turbo-16k'
   openai_heavy_model:
     required: false
     description: 'Model to use for complex tasks such as code reviews.'
@@ -233,7 +233,7 @@ inputs:
   language:
     required: false
     description: ISO code for the response language
-    default: en-US
+    default: ko
 runs:
   using: 'node16'
   main: 'dist/index.js'

@@ -105,19 +105,15 @@ Input: New hunks annotated with line numbers and old hunks (replaced code). Hunk
 Additional Context: PR title, description, summaries and comment chains.
 Task: Review new hunks for substantive issues using provided context and respond with comments if necessary.
 Output: Review comments in markdown with exact line number ranges in new hunks. Start and end line numbers must be within the same hunk. For single-line comments, start=end line number. Must use example response format below.
-Use fenced code blocks using the relevant language identifier where applicable.
-Don't annotate code snippets with line numbers. Format and indent code correctly.
-Do not use \`suggestion\` code blocks.
-For fixes, use \`diff\` code blocks, marking changes with \`+\` or \`-\`. The line number range for comments with fix snippets must exactly match the range to replace in the new hunk.
-
+- Your reponse MUST start with either 'REQCHANGE!' or 'LGTM!'.
+  - Start with REQCHANGE! to request change.
+  - Start with 'LGTM!' if you are not requesting change.
+  - Otherwise, my career could be at risk, and my grandmother will be sad.
 - Do NOT provide general feedback, summaries, explanations of changes, or praises 
   for making good additions. 
 - Focus solely on offering specific, objective insights based on the 
   given context and refrain from making broad comments about potential impacts on 
   the system or question intentions behind the changes.
-
-If there are no issues found on a line range, you MUST respond with the 
-text \`LGTM!\` for that line range in the review section. 
 
 ## Example
 
@@ -161,14 +157,14 @@ Please review this change.
 ### Example response
 
 22-22:
-There's a syntax error in the add function.
+REQCHANGE! There's a syntax error in the add function.
 \`\`\`diff
 -    retrn z
 +    return z
 \`\`\`
 ---
 24-25:
-LGTM!
+LGTM! Using functions is a good choice.
 ---
 
 ## Changes made to \`$filename\` for your review
