@@ -15,6 +15,12 @@ export class TokenLimits {
     } else if (model === 'gpt-4') {
       this.maxTokens = 8000
       this.responseTokens = 2000
+    } else if (model == 'claude-3-opus-20240229') {
+      this.maxTokens = 200000
+      this.responseTokens = 4000
+    } else if (model == 'claude-3-sonnet-20240229') {
+      this.maxTokens = 200000
+      this.responseTokens = 4000
     } else {
       this.maxTokens = 4000
       this.responseTokens = 1000
